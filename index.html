@@ -31,17 +31,6 @@
   .lists { background: #fff; border-radius: 14px; padding: 16px; margin-top: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
   .lists h3 { font-size: 1rem; margin-bottom: 8px; }
   .lists a { display: block; color: #2f7d4f; font-weight: 600; margin-bottom: 4px; }
-  .plan-tabs { display: flex; gap: 8px; margin-bottom: 10px; }
-  .plan-tabs button { font-size: 0.85rem; font-weight: 600; padding: 8px 14px; border-radius: 999px; border: 1px solid #ddd; background: #fff; cursor: pointer; }
-  .plan-tabs button.active { background: #2f7d4f; color: #fff; border-color: #2f7d4f; }
-  .plan-note { font-size: 0.8rem; color: #6b6b6b; margin-bottom: 6px; }
-  .plan-date { color: #999; font-weight: 400; font-size: 0.8rem; }
-  .plan-slot { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; }
-  .plan-slot select { flex: 1; font-size: 0.9rem; padding: 7px 8px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
-  .plan-view { white-space: nowrap; font-size: 0.8rem; font-weight: 700; color: #2f7d4f; text-decoration: none; }
-  .plan-actions { margin-top: 10px; }
-  .plan-actions button { font-size: 0.85rem; font-weight: 600; padding: 8px 14px; border-radius: 999px; border: 1px solid #ddd; background: #fff; cursor: pointer; }
-  .plan-saved { font-size: 0.8rem; color: #2f7d4f; font-weight: 600; margin-left: 8px; }
   .hint { font-size: 0.8rem; color: #999; margin-top: 16px; text-align: center; }
   .planner { background: #fff; border-radius: 14px; padding: 16px; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
   .planner h3 { font-size: 1rem; margin-bottom: 10px; }
@@ -58,7 +47,6 @@
 <div class="wrap">
   <h1>📚 Recipe Library</h1>
   <p class="sub">Every high-protein recipe card in one place — <span class="count" id="count">85 recipes</span>. Search, filter, and star your favorites. Tap a recipe to open its full card.</p>
-  <div id="planner-live"></div>
   <div class="planner" id="planner-static">
     <h3>🗓️ This week's plan — Week of Oct 17</h3>
     <div class="plan-day"><b>Monday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="recipes/high-protein-french-toast-with-berries.html">High-Protein French Toast with Berries</a><br><span class="lbl">Dinner · </span><a href="recipes/creamy-lemon-pasta-with-shrimp.html">Creamy Lemon Pasta with Shrimp</a></div></div>
@@ -174,7 +162,7 @@
     <a href="grocery-list-2026-09-26.md">Week of Sep 26, 2026</a>
     <a href="grocery-list-2026-09-22.md">Week of Sep 22, 2026</a>
   </div>
-  <p class="hint">Stars and planner changes are saved in this browser. To add a recipe, share a link or ask for a new card — it gets added here automatically.</p>
+  <p class="hint">Stars are saved in this browser. To add a recipe, share a link or ask for a new card — it gets added here automatically.</p>
   <footer>High-protein recipe library</footer>
 </div>
 <script>
@@ -217,91 +205,6 @@ document.getElementById("filters").addEventListener("click", e => {
   render();
 });
 
-// ---- Interactive meal planner ----
-const PLAN_KEY = "myrecipes-planner-v1";
-let planOverrides = JSON.parse(localStorage.getItem(PLAN_KEY) || "{}");
-let shownWeekOffset = 0;
-const DAY_NAMES = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
-const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-function parseISO(iso){ const p = iso.split("-"); return new Date(+p[0], +p[1]-1, +p[2], 12, 0, 0); }
-function fmtISO(d){ return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0"); }
-function fmtShort(d){ return MONTHS[d.getMonth()] + " " + d.getDate(); }
-function mondayOfWeek(d){ const x = new Date(d); const diff = (x.getDay()+6)%7; x.setDate(x.getDate()-diff); return x; }
-function addDays(d,n){ const x = new Date(d); x.setDate(x.getDate()+n); return x; }
-function thisWeekMonday(){ const now = new Date(); const dow = now.getDay(); if (dow===0||dow===6) return addDays(mondayOfWeek(now),7); return mondayOfWeek(now); }
-function firstMondayAfter(iso){ const d = parseISO(iso); do { d.setDate(d.getDate()+1); } while (d.getDay()!==1); return d; }
-function slugOf(r){ return r.s.replace(/^recipes\//,"").replace(/\.html$/,""); }
-function recipeBySlug(slug){ return RECIPES.find(r => slugOf(r)===slug); }
-function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
-function defaultPlan(){
-  let maxD = ""; RECIPES.forEach(r=>{ if (r.d > maxD) maxD = r.d; });
-  const monday = firstMondayAfter(maxD);
-  const plan = {};
-  RECIPES.forEach(r=>{ if (r.d===maxD && r.day){ (plan[r.day] = plan[r.day] || {})[r.m] = slugOf(r); }});
-  return { mondayISO: fmtISO(monday), plan };
-}
-function planSlot(weekISO, day, meal){
-  const over = (planOverrides[weekISO]||{})[day]||{};
-  if (over[meal] !== undefined) return over[meal];
-  const def = defaultPlan();
-  if (weekISO === def.mondayISO) return (def.plan[day]||{})[meal] || "";
-  return "";
-}
-function optionHTML(selected){
-  let out = '<option value="">— None —</option>';
-  ["Breakfast","Dinner"].forEach(meal => {
-    out += '<optgroup label="'+meal+'">';
-    RECIPES.filter(r=>r.m===meal).slice().sort((a,b)=>a.t.localeCompare(b.t)).forEach(r=>{
-      const slug = slugOf(r);
-      out += '<option value="'+slug+'"'+(slug===selected?' selected':'')+'>'+esc(r.t)+'</option>';
-    });
-    out += '</optgroup>';
-  });
-  return out;
-}
-function renderPlanner(){
-  const live = document.getElementById("planner-live");
-  const stat = document.getElementById("planner-static");
-  if (!live) return;
-  if (stat) stat.style.display = "none";
-  const base = thisWeekMonday();
-  const weeks = [0,1].map(off => addDays(base, off*7));
-  const monday = weeks[shownWeekOffset];
-  const weekISO = fmtISO(monday);
-  let h = '<div class="planner"><h3>🗓️ Meal planner</h3>';
-  h += '<div class="plan-tabs">';
-  weeks.forEach((w, i) => {
-    h += '<button data-week="'+i+'" class="'+(i===shownWeekOffset?"active":"")+'">'+(i===0?"This week":"Next week")+' · '+fmtShort(w)+' – '+fmtShort(addDays(w,6))+'</button>';
-  });
-  h += '</div><p class="plan-note">Pick a recipe for any meal — changes save automatically in this browser.</p>';
-  DAY_NAMES.forEach((day, i) => {
-    const date = addDays(monday, i);
-    h += '<div class="plan-day"><b>'+day+' <span class="plan-date">'+fmtShort(date)+'</span></b><div class="meals">';
-    ["Breakfast","Dinner"].forEach(meal => {
-      const sel = planSlot(weekISO, day, meal);
-      const rec = sel ? recipeBySlug(sel) : null;
-      h += '<div class="plan-slot"><span class="lbl">'+meal+' · </span><select data-day="'+day+'" data-meal="'+meal+'">'+optionHTML(sel)+'</select>' + (rec ? ' <a class="plan-view" href="'+rec.s+'">View →</a>' : '') + '</div>';
-    });
-    h += '</div></div>';
-  });
-  h += '<div class="plan-actions"><button id="plan-reset">Reset this week</button> <span id="plan-saved" class="plan-saved"></span></div></div>';
-  live.innerHTML = h;
-  live.querySelectorAll(".plan-tabs button").forEach(b => b.addEventListener("click", () => { shownWeekOffset = +b.getAttribute("data-week"); renderPlanner(); }));
-  live.querySelectorAll("select").forEach(sel => sel.addEventListener("change", () => {
-    const day = sel.getAttribute("data-day"), meal = sel.getAttribute("data-meal");
-    planOverrides[weekISO] = planOverrides[weekISO] || {};
-    planOverrides[weekISO][day] = planOverrides[weekISO][day] || {};
-    if (sel.value) planOverrides[weekISO][day][meal] = sel.value; else delete planOverrides[weekISO][day][meal];
-    localStorage.setItem(PLAN_KEY, JSON.stringify(planOverrides));
-    const saved = document.getElementById("plan-saved");
-    if (saved) { saved.textContent = "Saved ✓"; setTimeout(()=>{ saved.textContent=""; }, 1500); }
-    renderPlanner();
-  }));
-  const reset = document.getElementById("plan-reset");
-  if (reset) reset.addEventListener("click", () => { delete planOverrides[weekISO]; localStorage.setItem(PLAN_KEY, JSON.stringify(planOverrides)); renderPlanner(); });
-}
-
-renderPlanner();
 render();
 </script>
 </body>
