@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🛒 Weekly Grocery List — High-Protein Week (Oct 12 – Oct 18) — Easy Dad Recipes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f6f4ef; color: #2b2b2b; padding: 16px; line-height: 1.5; }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 8px 0 4px; }
+  .sub { color: #6b6b6b; font-size: 0.95rem; margin-bottom: 18px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .controls button { background: #2f7d4f; color: #fff; border: none; border-radius: 999px; padding: 9px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+  .controls button.secondary { background: #fff; color: #2f7d4f; border: 1px solid #2f7d4f; }
+  .group { background: #fff; border-radius: 14px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .group h2 { font-size: 1.05rem; margin-bottom: 8px; }
+  .item { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-top: 1px solid #f1f1f1; cursor: pointer; font-size: 0.95rem; }
+  .item:first-of-type { border-top: none; }
+  .item input { width: 20px; height: 20px; margin-top: 1px; flex-shrink: 0; accent-color: #2f7d4f; }
+  .item.is-checked span { font-weight: 600; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    nav, .controls, footer, .sub { display: none !important; }
+    .group { box-shadow: none; padding: 8px 0; margin-bottom: 0; }
+    body.checked-only .item:not(.is-checked) { display: none !important; }
+    body.checked-only .group:has(.item.is-checked) { display: block; }
+    body.checked-only .group:not(:has(.item.is-checked)) { display: none !important; }
+  }
+
+  .nav { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 700; margin: 6px 0 16px; }
+  .nav a { color: #2f7d4f; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .sitefoot { text-align: center; color: #999; font-size: 0.8rem; margin: 24px 0 12px; }
+  .sitefoot a { color: #2f7d4f; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav"><a href="index.html">Home</a><a href="recipes/index.html">Recipes</a><a href="plan/index.html">Meal Plan</a><a href="articles/index.html">Articles</a><a href="index.html#about">About</a></nav>
+  <h1>🛒 🛒 Weekly Grocery List — High-Protein Week (Oct 12 – Oct 18)</h1>
+  <p class="sub">Consolidated for all 14 recipes (7 breakfasts + 7 dinners). Quantities are combined and Check what you need, then print the list to bring to the store.</p>
+  <div class="controls">
+    <button id="check-all">Check all</button>
+    <button id="clear-all" class="secondary">Clear all</button>
+    <button id="print-all" class="secondary">🖨️ Print list</button>
+    <button id="print-checked" class="secondary">🖨️ Print checked only</button>
+  </div>
+  <div id="list">
+  <section class="group" data-group="🥬 Produce"><h2>🥬 Produce</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>1 pint cherry tomatoes</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>1 lb baby spinach (about 2 big handfuls + wrap filling)</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>1 head garlic (you&#x27;ll need ~12 cloves)</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>1 knob fresh ginger (1 tbsp)</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>4 onions (2 yellow + 1 red + 1 more for carnitas/sauce)</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>3 bell peppers (red/yellow/orange mix)</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>1 cucumber</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>1 avocado</span></label>
+<label class="item"><input type="checkbox" data-i="8"><span>1 head broccoli (~2 cups florets)</span></label>
+<label class="item"><input type="checkbox" data-i="9"><span>1 lb mushrooms, sliced</span></label>
+<label class="item"><input type="checkbox" data-i="10"><span>1 lemon + 3 limes + 1 orange (juice)</span></label>
+<label class="item"><input type="checkbox" data-i="11"><span>Fresh cilantro, fresh dill or mint, fresh parsley, fresh basil, chives, scallions</span></label>
+<label class="item"><input type="checkbox" data-i="12"><span>1 small bag shredded cabbage (or ¼ head)</span></label>
+<label class="item"><input type="checkbox" data-i="13"><span>2 tomatoes (wrap) — or use cherry tomatoes</span></label>
+<label class="item"><input type="checkbox" data-i="14"><span>1 bag arugula (optional swap for spinach in the wrap)</span></label></section>
+<section class="group" data-group="🥩 Meat &amp; Seafood"><h2>🥩 Meat &amp; Seafood</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>1½ lb chicken thighs (tikka masala)</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>1½ lb chicken thighs (shawarma bowls)</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>1 lb chicken breast (alfredo)</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>6 oz cooked chicken sausage links (breakfast pita pizza)</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>1 lb turkey breakfast sausage (breakfast burritos)</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>1¼ lb ground turkey (enchilada skillet)</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>1¼ lb lean ground turkey (lasagna soup)</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>3 oz sliced deli turkey (flatbread wrap)</span></label>
+<label class="item"><input type="checkbox" data-i="8"><span>2½ lb pork shoulder (carnitas)</span></label>
+<label class="item"><input type="checkbox" data-i="9"><span>1½ lb cod fillets</span></label>
+<label class="item"><input type="checkbox" data-i="10"><span>3 oz smoked salmon</span></label></section>
+<section class="group" data-group="🧀 Dairy &amp; Eggs"><h2>🧀 Dairy &amp; Eggs</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>2 dozen eggs (breakfasts use ~26 total across the week)</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>1 large tub cottage cheese (about 4 cups — pancakes, flatbread, alfredo, lasagna soup)</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>¾ cup + 2 tbsp plain Greek yogurt (marinades, sauce, enchilada topping)</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>8 oz shredded cheddar</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>8 oz shredded Mexican-blend cheese</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>8 oz shredded mozzarella (pita pizza + lasagna soup)</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>1 slice provolone</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>½ cup + 2 tbsp grated parmesan</span></label>
+<label class="item"><input type="checkbox" data-i="8"><span>¼ cup crumbled feta</span></label>
+<label class="item"><input type="checkbox" data-i="9"><span>¼ cup crumbled cotija</span></label>
+<label class="item"><input type="checkbox" data-i="10"><span>1 small tub whipped cream cheese (bagel)</span></label>
+<label class="item"><input type="checkbox" data-i="11"><span>½ cup milk</span></label>
+<label class="item"><input type="checkbox" data-i="12"><span>Butter (or use oil)</span></label></section>
+<section class="group" data-group="❄️ Frozen"><h2>❄️ Frozen</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Nothing required this week — all fresh. (Freeze leftover burritos and soup in portions.)</span></label></section>
+<section class="group" data-group="🥫 Pantry (buy if you don&#x27;t have)"><h2>🥫 Pantry (buy if you don&#x27;t have)</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Rolled oats (2 cups)</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>Basmati rice (about 4 cups dry — tikka masala, shawarma bowls, carnitas bowls)</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>Fettuccine, 12 oz (or protein pasta)</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>Lasagna noodles, 8 oz</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>1 everything bagel (high-protein bagel if available)</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>10 large flour tortillas (high-fiber)</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>2 whole-wheat pitas</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>6 corn tortillas</span></label>
+<label class="item"><input type="checkbox" data-i="8"><span>1 can (15 oz) refried pinto beans</span></label>
+<label class="item"><input type="checkbox" data-i="9"><span>2 cans (15 oz) black beans</span></label>
+<label class="item"><input type="checkbox" data-i="10"><span>1 can (10 oz) red enchilada sauce</span></label>
+<label class="item"><input type="checkbox" data-i="11"><span>1 can (15 oz) tomato sauce + 1 can (28 oz) crushed tomatoes</span></label>
+<label class="item"><input type="checkbox" data-i="12"><span>4 cups chicken broth</span></label>
+<label class="item"><input type="checkbox" data-i="13"><span>½ cup light coconut milk</span></label>
+<label class="item"><input type="checkbox" data-i="14"><span>1 can sliced black olives / Kalamata olives (½ cup)</span></label>
+<label class="item"><input type="checkbox" data-i="15"><span>2 tbsp capers</span></label>
+<label class="item"><input type="checkbox" data-i="16"><span>Salsa roja (1 cup) + salsa of choice (for bowls)</span></label>
+<label class="item"><input type="checkbox" data-i="17"><span>Shawarma spice blend (2 tbsp) — or mix: cumin, paprika, coriander, turmeric, garlic powder, cinnamon</span></label>
+<label class="item"><input type="checkbox" data-i="18"><span>Tikka masala spice or curry powder (2 tbsp)</span></label>
+<label class="item"><input type="checkbox" data-i="19"><span>1 tbsp oregano, 1 tsp chili powder, 1 tsp cumin, 1 tsp Italian seasoning, chili flakes, garlic powder</span></label>
+<label class="item"><input type="checkbox" data-i="20"><span>Olive oil, cooking oil/spray, salt, black pepper, soy sauce</span></label>
+<label class="item"><input type="checkbox" data-i="21"><span>Maple syrup, vanilla extract, baking powder, cinnamon</span></label>
+<label class="item"><input type="checkbox" data-i="22"><span>1 ripe banana</span></label></section>
+<section class="group" data-group="✅ Check your pantry (don&#x27;t rebuy)"><h2>✅ Check your pantry (don&#x27;t rebuy)</h2>
+</section>
+  </div>
+  <footer class="sitefoot">Easy Dad Recipes · <a href="https://easydadrecipes.substack.com/">Newsletter</a> · <a href="https://www.instagram.com/easydadrecipes">Instagram</a> · <a href="https://www.youtube.com/@easydadrecipes">YouTube</a></footer>
+</div>
+<script>(function(){
+  var key = "grocery:" + "grocery-list-2026-10-10.md";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll(".item input"));
+  function save() {
+    var checked = boxes.filter(function(b) { return b.checked; }).map(function(b) {
+      return b.closest(".group").getAttribute("data-group") + "|" + b.getAttribute("data-i");
+    });
+    try { localStorage.setItem(key, JSON.stringify(checked)); } catch (e) {}
+  }
+  function applyState() {
+    boxes.forEach(function(b) {
+      b.closest(".item").classList.toggle("is-checked", b.checked);
+    });
+  }
+  try {
+    var saved = JSON.parse(localStorage.getItem(key) || "[]");
+    boxes.forEach(function(b) {
+      var id = b.closest(".group").getAttribute("data-group") + "|" + b.getAttribute("data-i");
+      if (saved.indexOf(id) !== -1) b.checked = true;
+    });
+  } catch (e) {}
+  applyState();
+  boxes.forEach(function(b) {
+    b.addEventListener("change", function() { applyState(); save(); });
+  });
+  document.getElementById("check-all").onclick = function() {
+    boxes.forEach(function(b) { b.checked = true; }); applyState(); save();
+  };
+  document.getElementById("clear-all").onclick = function() {
+    boxes.forEach(function(b) { b.checked = false; }); applyState(); save();
+  };
+  document.getElementById("print-all").onclick = function() {
+    document.body.classList.remove("checked-only"); window.print();
+  };
+  document.getElementById("print-checked").onclick = function() {
+    document.body.classList.add("checked-only"); window.print();
+  };
+  window.addEventListener("afterprint", function() {
+    document.body.classList.remove("checked-only");
+  });
+})();</script>
+</body>
+</html>

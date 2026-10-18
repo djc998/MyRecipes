@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grocery List — High-Protein Week (Oct 5 – Oct 11) — Easy Dad Recipes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f6f4ef; color: #2b2b2b; padding: 16px; line-height: 1.5; }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 8px 0 4px; }
+  .sub { color: #6b6b6b; font-size: 0.95rem; margin-bottom: 18px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .controls button { background: #2f7d4f; color: #fff; border: none; border-radius: 999px; padding: 9px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+  .controls button.secondary { background: #fff; color: #2f7d4f; border: 1px solid #2f7d4f; }
+  .group { background: #fff; border-radius: 14px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .group h2 { font-size: 1.05rem; margin-bottom: 8px; }
+  .item { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-top: 1px solid #f1f1f1; cursor: pointer; font-size: 0.95rem; }
+  .item:first-of-type { border-top: none; }
+  .item input { width: 20px; height: 20px; margin-top: 1px; flex-shrink: 0; accent-color: #2f7d4f; }
+  .item.is-checked span { font-weight: 600; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    nav, .controls, footer, .sub { display: none !important; }
+    .group { box-shadow: none; padding: 8px 0; margin-bottom: 0; }
+    body.checked-only .item:not(.is-checked) { display: none !important; }
+    body.checked-only .group:has(.item.is-checked) { display: block; }
+    body.checked-only .group:not(:has(.item.is-checked)) { display: none !important; }
+  }
+
+  .nav { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 700; margin: 6px 0 16px; }
+  .nav a { color: #2f7d4f; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .sitefoot { text-align: center; color: #999; font-size: 0.8rem; margin: 24px 0 12px; }
+  .sitefoot a { color: #2f7d4f; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav"><a href="index.html">Home</a><a href="recipes/index.html">Recipes</a><a href="plan/index.html">Meal Plan</a><a href="articles/index.html">Articles</a><a href="index.html#about">About</a></nav>
+  <h1>🛒 Grocery List — High-Protein Week (Oct 5 – Oct 11)</h1>
+  <p class="sub">Covers all 14 recipes (7 breakfasts + 7 dinners) in recipe-cards-2026-10-03.html. Check what you need, then print the list to bring to the store.</p>
+  <div class="controls">
+    <button id="check-all">Check all</button>
+    <button id="clear-all" class="secondary">Clear all</button>
+    <button id="print-all" class="secondary">🖨️ Print list</button>
+    <button id="print-checked" class="secondary">🖨️ Print checked only</button>
+  </div>
+  <div id="list">
+  <section class="group" data-group="Produce"><h2>Produce</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>8 medium sweet potatoes</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>1 lb asparagus</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>1 lb baby potatoes</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>1 lb fresh green beans</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>1 container (5 oz) baby spinach</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>½ pint cherry tomatoes</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>4 bell peppers (mix of red + green)</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>1 large yellow onion + 1 red onion</span></label>
+<label class="item"><input type="checkbox" data-i="8"><span>2 stalks celery</span></label>
+<label class="item"><input type="checkbox" data-i="9"><span>1 head fresh garlic</span></label>
+<label class="item"><input type="checkbox" data-i="10"><span>1 small piece fresh ginger (~1 tbsp grated)</span></label>
+<label class="item"><input type="checkbox" data-i="11"><span>3 lemons + 2 limes</span></label>
+<label class="item"><input type="checkbox" data-i="12"><span>1–2 avocados</span></label>
+<label class="item"><input type="checkbox" data-i="13"><span>1 bag frozen mixed berries</span></label>
+<label class="item"><input type="checkbox" data-i="14"><span>1 bag frozen peas &amp; carrots</span></label>
+<label class="item"><input type="checkbox" data-i="15"><span>Sliced scallions / green onions (1 bunch + 3 loose stalks)</span></label></section>
+<section class="group" data-group="Meat &amp; Seafood"><h2>Meat &amp; Seafood</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Boneless, skinless chicken thighs — 2 lb</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>Chicken breast — 3 lb</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>Flank steak — 1½ lb</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>Pork tenderloins — 2 (~2 lb total)</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>Large shrimp, peeled — 1½ lb</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>Salmon fillets (5–6 oz each) — 4</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>Turkey breakfast sausage — 12 oz</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>Deli ham, diced — 6 oz</span></label></section>
+<section class="group" data-group="Dairy &amp; Eggs"><h2>Dairy &amp; Eggs</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Large eggs — 3 dozen</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>Liquid egg whites — 1 carton (2 cups)</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>Low-fat cottage cheese — 1 large tub (24 oz)</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>Nonfat Greek yogurt — 1 large tub (32 oz)</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>Shredded cheddar — 1 cup (1 bag)</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>Crumbled feta — 1 small container</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>Shredded mozzarella — ½ cup (buy an 8 oz bag)</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>Blue cheese crumbles — 1 small pack</span></label>
+<label class="item"><input type="checkbox" data-i="8"><span>Cream cheese — 1 block (2 tbsp needed)</span></label>
+<label class="item"><input type="checkbox" data-i="9"><span>Milk of choice — 1 quart</span></label></section>
+<section class="group" data-group="Frozen"><h2>Frozen</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>(See Produce — frozen berries and peas &amp; carrots)</span></label></section>
+<section class="group" data-group="Pantry (buy only what you don&#x27;t have)"><h2>Pantry (buy only what you don&#x27;t have)</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Rolled oats — 1 cup</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>Vanilla protein powder — 1 scoop</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>Chocolate protein powder — 1 scoop</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>Chia seeds — 3 tbsp</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>Unsweetened cocoa powder — 1 tbsp</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>High-protein granola — ⅓ cup</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>Hemp seeds — 1 tbsp</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>Sliced almonds — 1 tbsp</span></label>
+<label class="item"><input type="checkbox" data-i="8"><span>Crushed peanuts — small bag (topping)</span></label>
+<label class="item"><input type="checkbox" data-i="9"><span>Almond butter — 1 tbsp</span></label>
+<label class="item"><input type="checkbox" data-i="10"><span>Jasmine or white rice — ~2 lb dry (about 4½ cups dry makes ~13 cups cooked)</span></label>
+<label class="item"><input type="checkbox" data-i="11"><span>Honey — ~¾ cup</span></label>
+<label class="item"><input type="checkbox" data-i="12"><span>Maple syrup — 3 tbsp</span></label>
+<label class="item"><input type="checkbox" data-i="13"><span>Low-sodium soy sauce — ~1 cup</span></label>
+<label class="item"><input type="checkbox" data-i="14"><span>Buffalo sauce — ⅓ cup</span></label>
+<label class="item"><input type="checkbox" data-i="15"><span>Salsa — 1 jar (fajita bowls)</span></label>
+<label class="item"><input type="checkbox" data-i="16"><span>Fajita seasoning — 2 tbsp</span></label>
+<label class="item"><input type="checkbox" data-i="17"><span>Dijon mustard — 1 tbsp</span></label>
+<label class="item"><input type="checkbox" data-i="18"><span>Sesame oil — 1 tbsp</span></label>
+<label class="item"><input type="checkbox" data-i="19"><span>Apple cider vinegar — 1 tbsp</span></label>
+<label class="item"><input type="checkbox" data-i="20"><span>Cornstarch — 2 tbsp + 2 tsp</span></label>
+<label class="item"><input type="checkbox" data-i="21"><span>Dried rosemary — 1 tsp</span></label>
+<label class="item"><input type="checkbox" data-i="22"><span>Dried thyme — 1 tsp</span></label>
+<label class="item"><input type="checkbox" data-i="23"><span>Dried oregano — ~1 tsp</span></label>
+<label class="item"><input type="checkbox" data-i="24"><span>Italian herb seasoning — 2 tsp</span></label>
+<label class="item"><input type="checkbox" data-i="25"><span>Ground cinnamon — 1 tbsp +</span></label>
+<label class="item"><input type="checkbox" data-i="26"><span>Baking powder — 1 tsp</span></label>
+<label class="item"><input type="checkbox" data-i="27"><span>Vanilla extract — 1 tsp</span></label>
+<label class="item"><input type="checkbox" data-i="28"><span>Garlic powder — ~2 tsp</span></label>
+<label class="item"><input type="checkbox" data-i="29"><span>Cooking spray</span></label>
+<label class="item"><input type="checkbox" data-i="30"><span>Olive oil</span></label></section>
+<section class="group" data-group="Check your pantry"><h2>Check your pantry</h2>
+</section>
+<section class="group" data-group="Weekend prep plan (Sat/Sun)"><h2>Weekend prep plan (Sat/Sun)</h2>
+</section>
+  </div>
+  <footer class="sitefoot">Easy Dad Recipes · <a href="https://easydadrecipes.substack.com/">Newsletter</a> · <a href="https://www.instagram.com/easydadrecipes">Instagram</a> · <a href="https://www.youtube.com/@easydadrecipes">YouTube</a></footer>
+</div>
+<script>(function(){
+  var key = "grocery:" + "grocery-list-2026-10-03.md";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll(".item input"));
+  function save() {
+    var checked = boxes.filter(function(b) { return b.checked; }).map(function(b) {
+      return b.closest(".group").getAttribute("data-group") + "|" + b.getAttribute("data-i");
+    });
+    try { localStorage.setItem(key, JSON.stringify(checked)); } catch (e) {}
+  }
+  function applyState() {
+    boxes.forEach(function(b) {
+      b.closest(".item").classList.toggle("is-checked", b.checked);
+    });
+  }
+  try {
+    var saved = JSON.parse(localStorage.getItem(key) || "[]");
+    boxes.forEach(function(b) {
+      var id = b.closest(".group").getAttribute("data-group") + "|" + b.getAttribute("data-i");
+      if (saved.indexOf(id) !== -1) b.checked = true;
+    });
+  } catch (e) {}
+  applyState();
+  boxes.forEach(function(b) {
+    b.addEventListener("change", function() { applyState(); save(); });
+  });
+  document.getElementById("check-all").onclick = function() {
+    boxes.forEach(function(b) { b.checked = true; }); applyState(); save();
+  };
+  document.getElementById("clear-all").onclick = function() {
+    boxes.forEach(function(b) { b.checked = false; }); applyState(); save();
+  };
+  document.getElementById("print-all").onclick = function() {
+    document.body.classList.remove("checked-only"); window.print();
+  };
+  document.getElementById("print-checked").onclick = function() {
+    document.body.classList.add("checked-only"); window.print();
+  };
+  window.addEventListener("afterprint", function() {
+    document.body.classList.remove("checked-only");
+  });
+})();</script>
+</body>
+</html>
