@@ -18,6 +18,9 @@
   .plan-day .meals { flex: 1; }
   .plan-day a { color: #2f7d4f; font-weight: 600; text-decoration: none; }
   .plan-day .lbl { color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .plan-nav { display: flex; gap: 10px; justify-content: space-between; margin-bottom: 12px; }
+  .plan-nav button { background: #2f7d4f; color: #fff; border: none; border-radius: 999px; padding: 8px 14px; font: inherit; font-weight: 600; cursor: pointer; }
+  .plan-nav button:disabled { background: #cfd8d2; cursor: default; }
   .lists { background: #fff; border-radius: 14px; padding: 16px; margin-top: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
   .lists h3 { font-size: 1rem; margin-bottom: 8px; }
   .lists a { display: block; color: #2f7d4f; font-weight: 600; margin-bottom: 4px; }
@@ -33,8 +36,64 @@
 <div class="wrap">
   <nav class="nav"><a href="../index.html">Home</a><a href="../recipes/index.html">Recipes</a><a href="../plan/index.html">Meal Plan</a><a href="../articles/index.html">Articles</a><a href="../index.html#about">About</a></nav>
   <h1>🗓️ Meal Plan</h1>
-  <p class="sub">This week's dinners and breakfasts — .</p>
-  <p class="sub">No plan for this week yet.</p>
+  <p class="sub">Browse every week's plan — previous weeks, this week, and a peek at what's coming next.</p>
+  <div class="planner" id="planner-static">
+<section class="plan-week" data-week="0">
+    <h3>🗓️ Week of Sep 22</h3>
+    <div class="plan-day"><b>Monday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/chocolate-pb-protein-overnight-oats.html">Chocolate PB Protein Overnight Oats</a><br><span class="lbl">Dinner · </span><a href="../recipes/lightened-up-chicken-parmesan.html">Lightened-Up Chicken Parmesan</a></div></div>
+    <div class="plan-day"><b>Tuesday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/sausage-veggie-egg-muffins.html">Sausage &amp; Veggie Egg Muffins</a><br><span class="lbl">Dinner · </span><a href="../recipes/beef-broccoli-stir-fry.html">Beef &amp; Broccoli Stir-Fry</a></div></div>
+    <div class="plan-day"><b>Wednesday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/shakshuka-with-feta.html">Shakshuka with Feta</a><br><span class="lbl">Dinner · </span><a href="../recipes/turkey-meatballs-with-zucchini-noodles.html">Turkey Meatballs with Zucchini Noodles</a></div></div>
+    <div class="plan-day"><b>Thursday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/high-protein-french-toast.html">High-Protein French Toast</a><br><span class="lbl">Dinner · </span><a href="../recipes/blackened-fish-tacos.html">Blackened Fish Tacos</a></div></div>
+    <div class="plan-day"><b>Friday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/cajun-chicken-breakfast-quesadilla.html">Cajun Chicken Breakfast Quesadilla</a><br><span class="lbl">Dinner · </span><a href="../recipes/egg-roll-in-a-bowl.html">Egg Roll in a Bowl</a></div></div>
+    <div class="plan-day"><b>Saturday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/chili-sweet-potato-breakfast-hash.html">Chili Sweet Potato Breakfast Hash</a><br><span class="lbl">Dinner · </span><a href="../recipes/chicken-sausage-peppers-one-pan-orzo.html">Chicken Sausage &amp; Peppers One-Pan Orzo</a></div></div>
+    <div class="plan-day"><b>Sunday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/turkey-bacon-egg-cheese-breakfast-sandwich.html">Turkey Bacon, Egg &amp; Cheese Breakfast Sandwich</a><br><span class="lbl">Dinner · </span><a href="../recipes/cajun-chicken-cottage-cheese-alfredo.html">Cajun Chicken Cottage Cheese Alfredo</a></div></div>
+  </section>
+<section class="plan-week" data-week="1">
+    <h3>🗓️ Week of Sep 26</h3>
+    <div class="plan-day"><b>Monday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/blueberry-cheesecake-protein-overnight-oats.html">Blueberry Cheesecake Protein Overnight Oats</a><br><span class="lbl">Dinner · </span><a href="../recipes/firecracker-chicken-meatballs-with-rice.html">Firecracker Chicken Meatballs with Rice</a></div></div>
+    <div class="plan-day"><b>Tuesday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/sheet-pan-sausage-egg-potato-breakfast-bake.html">Sheet-Pan Sausage, Egg &amp; Potato Breakfast Bake</a><br><span class="lbl">Dinner · </span><a href="../recipes/creamy-tuscan-garlic-chicken.html">Creamy Tuscan Garlic Chicken</a></div></div>
+    <div class="plan-day"><b>Wednesday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/chocolate-peanut-butter-protein-smoothie-bowl.html">Chocolate Peanut Butter Protein Smoothie Bowl</a><br><span class="lbl">Dinner · </span><a href="../recipes/honey-mustard-baked-salmon.html">Honey Mustard Baked Salmon</a></div></div>
+    <div class="plan-day"><b>Thursday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/cottage-cheese-egg-scramble.html">Cottage Cheese Egg Scramble</a><br><span class="lbl">Dinner · </span><a href="../recipes/turkey-stuffed-bell-peppers.html">Turkey Stuffed Bell Peppers</a></div></div>
+    <div class="plan-day"><b>Friday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/vanilla-almond-protein-waffles.html">Vanilla Almond Protein Waffles</a><br><span class="lbl">Dinner · </span><a href="../recipes/korean-bbq-beef-bowls.html">Korean BBQ Beef Bowls</a></div></div>
+    <div class="plan-day"><b>Saturday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/banana-cottage-cheese-muffins.html">Banana Cottage Cheese Muffins</a><br><span class="lbl">Dinner · </span><a href="../recipes/hearty-lean-beef-chili.html">Hearty Lean Beef Chili</a></div></div>
+    <div class="plan-day"><b>Sunday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/steak-egg-breakfast-tacos.html">Steak &amp; Egg Breakfast Tacos</a><br><span class="lbl">Dinner · </span><a href="../recipes/one-pot-turkey-bolognese.html">One-Pot Turkey Bolognese</a></div></div>
+  </section>
+<section class="plan-week" data-week="2">
+    <h3>🗓️ Week of Oct 3</h3>
+    <div class="plan-day"><b>Monday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/cinnamon-roll-protein-baked-oats.html">Cinnamon Roll Protein Baked Oats</a><br><span class="lbl">Dinner · </span><a href="../recipes/honey-garlic-chicken-thighs-with-rice.html">Honey Garlic Chicken Thighs with Rice</a></div></div>
+    <div class="plan-day"><b>Tuesday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/mediterranean-egg-white-frittata.html">Mediterranean Egg White Frittata</a><br><span class="lbl">Dinner · </span><a href="../recipes/lightened-up-mongolian-beef.html">Lightened-Up Mongolian Beef</a></div></div>
+    <div class="plan-day"><b>Wednesday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/greek-yogurt-power-parfait-with-almond-butter.html">Greek Yogurt Power Parfait with Almond Butter</a><br><span class="lbl">Dinner · </span><a href="../recipes/lemon-herb-salmon-with-asparagus.html">Lemon Herb Salmon with Asparagus</a></div></div>
+    <div class="plan-day"><b>Thursday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/loaded-breakfast-sweet-potatoes.html">Loaded Breakfast Sweet Potatoes</a><br><span class="lbl">Dinner · </span><a href="../recipes/high-protein-chicken-fried-rice.html">High-Protein Chicken Fried Rice</a></div></div>
+    <div class="plan-day"><b>Friday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/spinach-feta-protein-egg-bites.html">Spinach &amp; Feta Protein Egg Bites</a><br><span class="lbl">Dinner · </span><a href="../recipes/buffalo-chicken-stuffed-sweet-potatoes.html">Buffalo Chicken Stuffed Sweet Potatoes</a></div></div>
+    <div class="plan-day"><b>Saturday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/chocolate-chia-protein-pudding.html">Chocolate Chia Protein Pudding</a><br><span class="lbl">Dinner · </span><a href="../recipes/garlic-herb-pork-tenderloin.html">Garlic Herb Pork Tenderloin</a></div></div>
+    <div class="plan-day"><b>Sunday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/denver-omelet-bake.html">Denver Omelet Bake</a><br><span class="lbl">Dinner · </span><a href="../recipes/shrimp-fajita-bowls-2026-10-03.html">Shrimp Fajita Bowls</a></div></div>
+  </section>
+<section class="plan-week" data-week="3">
+    <h3>🗓️ Week of Oct 10</h3>
+    <div class="plan-day"><b>Monday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/smoked-salmon-egg-protein-bagel.html">Smoked Salmon &amp; Egg Protein Bagel</a><br><span class="lbl">Dinner · </span><a href="../recipes/light-chicken-tikka-masala.html">Light Chicken Tikka Masala</a></div></div>
+    <div class="plan-day"><b>Tuesday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/freezer-turkey-sausage-breakfast-burritos.html">Freezer Turkey Sausage Breakfast Burritos</a><br><span class="lbl">Dinner · </span><a href="../recipes/one-pan-turkey-enchilada-skillet.html">One-Pan Turkey Enchilada Skillet</a></div></div>
+    <div class="plan-day"><b>Wednesday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/cottage-cheese-blender-protein-pancakes.html">Cottage Cheese Blender Protein Pancakes</a><br><span class="lbl">Dinner · </span><a href="../recipes/chicken-shawarma-bowls.html">Chicken Shawarma Bowls</a></div></div>
+    <div class="plan-day"><b>Thursday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/huevos-rancheros.html">Huevos Rancheros</a><br><span class="lbl">Dinner · </span><a href="../recipes/high-protein-lasagna-soup.html">High-Protein Lasagna Soup</a></div></div>
+    <div class="plan-day"><b>Friday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/cottage-cheese-flatbread-breakfast-wrap.html">Cottage Cheese Flatbread Breakfast Wrap</a><br><span class="lbl">Dinner · </span><a href="../recipes/high-protein-chicken-alfredo.html">High-Protein Chicken Alfredo</a></div></div>
+    <div class="plan-day"><b>Saturday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/breakfast-pita-pizza.html">Breakfast Pita Pizza</a><br><span class="lbl">Dinner · </span><a href="../recipes/mediterranean-baked-cod.html">Mediterranean Baked Cod</a></div></div>
+    <div class="plan-day"><b>Sunday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/savory-spinach-oatmeal-with-fried-egg.html">Savory Spinach Oatmeal with Fried Egg</a><br><span class="lbl">Dinner · </span><a href="../recipes/slow-cooker-pork-carnitas-bowls.html">Slow Cooker Pork Carnitas Bowls</a></div></div>
+  </section>
+<section class="plan-week" data-week="4">
+    <h3>🗓️ This week's plan — Week of Oct 17</h3>
+    <div class="plan-day"><b>Monday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/high-protein-french-toast-with-berries.html">High-Protein French Toast with Berries</a><br><span class="lbl">Dinner · </span><a href="../recipes/creamy-lemon-pasta-with-shrimp.html">Creamy Lemon Pasta with Shrimp</a></div></div>
+    <div class="plan-day"><b>Tuesday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/turkey-bacon-egg-white-breakfast-sandwich.html">Turkey Bacon &amp; Egg White Breakfast Sandwich</a><br><span class="lbl">Dinner · </span><a href="../recipes/baked-ziti-with-turkey-sausage-ricotta.html">Baked Ziti with Turkey Sausage &amp; Ricotta</a></div></div>
+    <div class="plan-day"><b>Wednesday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/berry-cottage-cheese-smoothie.html">Berry Cottage Cheese Smoothie</a><br><span class="lbl">Dinner · </span><a href="../recipes/teriyaki-tofu-edamame-rice-bowls.html">Teriyaki Tofu &amp; Edamame Rice Bowls</a></div></div>
+    <div class="plan-day"><b>Thursday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/shakshuka-with-feta-chickpeas.html">Shakshuka with Feta &amp; Chickpeas</a><br><span class="lbl">Dinner · </span><a href="../recipe-cards-2026-10-17.html">Lean Beef Shepherd&#x27;s Pie with Cauliflower Mash</a></div></div>
+    <div class="plan-day"><b>Friday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/ham-egg-cheese-breakfast-quesadilla.html">Ham, Egg &amp; Cheese Breakfast Quesadilla</a><br><span class="lbl">Dinner · </span><a href="../recipes/pesto-chicken-with-roasted-vegetables-quinoa.html">Pesto Chicken with Roasted Vegetables &amp; Quinoa</a></div></div>
+    <div class="plan-day"><b>Saturday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/chicken-egg-breakfast-fried-rice.html">Chicken &amp; Egg Breakfast Fried Rice</a><br><span class="lbl">Dinner · </span><a href="../recipes/blackened-tilapia-tacos-with-mango-slaw.html">Blackened Tilapia Tacos with Mango Slaw</a></div></div>
+    <div class="plan-day"><b>Sunday</b><div class="meals"><span class="lbl">Breakfast · </span><a href="../recipes/cottage-cheese-toast-with-eggs-everything-seasoning.html">Cottage Cheese Toast with Eggs &amp; Everything Seasoning</a><br><span class="lbl">Dinner · </span><a href="../recipes/spinach-feta-stuffed-chicken-breast.html">Spinach &amp; Feta Stuffed Chicken Breast</a></div></div>
+  </section>
+<section class="plan-week" data-week="5">
+    <h3>🗓️ Next week — coming soon</h3>
+    <p class="sub">Next week's plan lands Saturday — 7 breakfasts + 7 dinners. Check back then to see what's coming up.</p>
+  </section>
+  </div>
+<script>(function(){var weeks=document.querySelectorAll(".plan-week");if(!weeks.length)return;var cur=4;function show(i){cur=i;weeks.forEach(function(s,j){s.style.display=(j===i?"":"none");});prev.disabled=(i===0);next.disabled=(i===weeks.length-1);}var nav=document.createElement("div");nav.className="plan-nav";var prev=document.createElement("button");prev.textContent="\u2190 Previous week";var next=document.createElement("button");next.textContent="Next week \u2192";prev.onclick=function(){if(cur>0)show(cur-1);};next.onclick=function(){if(cur<weeks.length-1)show(cur+1);};nav.appendChild(prev);nav.appendChild(next);var c=document.getElementById("planner-static");c.parentNode.insertBefore(nav,c);show(cur);})();</script>
   <div class="lists">
     <h3>🛒 Grocery lists</h3>
     <a href="../grocery-list-2026-10-17.md">Week of Oct 17, 2026</a>
