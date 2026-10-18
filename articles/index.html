@@ -18,12 +18,18 @@
   .tag { font-size: 0.75rem; background: #eef5f0; color: #2f7d4f; font-weight: 600; border-radius: 999px; padding: 3px 9px; }
   .ex { font-size: 0.9rem; color: #555; }
   .open { color: #2f7d4f; font-weight: 700; text-decoration: none; white-space: nowrap; }
-  footer { text-align: center; color: #999; font-size: 0.8rem; margin: 24px 0 12px; }
+
+  .nav { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 700; margin: 6px 0 16px; }
+  .nav a { color: #2f7d4f; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .sitefoot { text-align: center; color: #999; font-size: 0.8rem; margin: 24px 0 12px; }
+  .sitefoot a { color: #2f7d4f; text-decoration: none; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <a class="back" href="../index.html">← Back to all recipes</a>
+  <nav class="nav"><a href="../index.html">Home</a><a href="../recipes/index.html">Recipes</a><a href="../plan/index.html">Meal Plan</a><a href="../articles/index.html">Articles</a><a href="../index.html#about">About</a></nav>
+  <a class="back" href="../recipes/index.html">← Back to all recipes</a>
   <h1>📰 Articles</h1>
   <p class="sub">The stories behind the recipes — newest first.</p>
   <div class="row"><div class="meta"><h2>Creamy Lemon Pasta with Shrimp: The 25-Minute Pasta That Doesn&#x27;t Weigh You Down</h2><div class="tags"><span class="tag">2026-10-17</span></div><p class="ex">Creamy pasta without the food coma.</p></div><a class="open" href="creamy-lemon-pasta-with-shrimp-the.html">Read →</a></div>
@@ -31,7 +37,7 @@
 <div class="row"><div class="meta"><h2>Honey Garlic Chicken Stir-Fry: 60g Protein, One Pan, 30 Minutes</h2><div class="tags"><span class="tag">2026-10-17</span></div><p class="ex">One pan, a glaze that does all the heavy lifting, and 60 grams of protein without a single supplement scoop.</p></div><a class="open" href="honey-garlic-chicken-stir-fry-60g.html">Read →</a></div>
 <div class="row"><div class="meta"><h2>Loaded Baked Sweet Potato: The Post-Gym Meal That Actually Fills You Up</h2><div class="tags"><span class="tag">2026-10-17</span></div><p class="ex">Chicken and rice. Again. If your post-gym meal feels like a punishment, this one&#x27;s for you.</p></div><a class="open" href="loaded-baked-sweet-potato-the-post.html">Read →</a></div>
 <div class="row"><div class="meta"><h2>Bang Bang Salmon: The 20-Minute Dinner That Actually Gets Eaten</h2><div class="tags"><span class="tag">2026-10-17</span></div><p class="ex">Salmon used to be the dinner my family pushed around the plate. Not anymore.</p></div><a class="open" href="bang-bang-salmon-the-20-minute-dinner.html">Read →</a></div>
-  <footer>Easy Dad Recipes</footer>
+  <footer class="sitefoot">Easy Dad Recipes · <a href="https://easydadrecipes.substack.com/">Newsletter</a> · <a href="https://www.instagram.com/easydadrecipes">Instagram</a> · <a href="https://www.youtube.com/@easydadrecipes">YouTube</a></footer>
 </div>
 </body>
 </html>

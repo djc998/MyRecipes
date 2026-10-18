@@ -22,12 +22,18 @@
   .watch { display: inline-block; margin-top: 14px; background: #2b2b2b; color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem; border-radius: 999px; padding: 10px 18px; }
   .watch span { margin-right: 6px; }
   .src { font-size: 0.75rem; color: #999; margin-top: 8px; }
-  footer { text-align: center; color: #999; font-size: 0.8rem; margin: 24px 0 12px; }
+
+  .nav { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 700; margin: 6px 0 16px; }
+  .nav a { color: #2f7d4f; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .sitefoot { text-align: center; color: #999; font-size: 0.8rem; margin: 24px 0 12px; }
+  .sitefoot a { color: #2f7d4f; text-decoration: none; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <a class="back" href="../index.html">← Back to all recipes</a>
+  <nav class="nav"><a href="../index.html">Home</a><a href="../recipes/index.html">Recipes</a><a href="../plan/index.html">Meal Plan</a><a href="../articles/index.html">Articles</a><a href="../index.html#about">About</a></nav>
+  <a class="back" href="../recipes/index.html">← Back to all recipes</a>
   <p class="sub">Week of Oct 3 · Saturday</p>
   <div class="card">
     <span class="day day-am">Saturday</span>
@@ -51,7 +57,7 @@
     <p class="src">Recipe inspiration: creamy chocolate chia protein pudding reel</p>
   </div>
   
-  <footer>Easy Dad Recipes</footer>
+  <footer class="sitefoot">Easy Dad Recipes · <a href="https://easydadrecipes.substack.com/">Newsletter</a> · <a href="https://www.instagram.com/easydadrecipes">Instagram</a> · <a href="https://www.youtube.com/@easydadrecipes">YouTube</a></footer>
 </div>
 </body>
 </html>
