@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekend Meal Prep Sheet — Week of Oct 17 — Easy Dad Recipes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f6f4ef; color: #2b2b2b; padding: 16px; line-height: 1.5; }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 8px 0 4px; }
+  .sub { color: #6b6b6b; font-size: 0.95rem; margin-bottom: 18px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .controls button { background: #2f7d4f; color: #fff; border: none; border-radius: 999px; padding: 9px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+  .controls button.secondary { background: #fff; color: #2f7d4f; border: 1px solid #2f7d4f; }
+  .group { background: #fff; border-radius: 14px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .group h2 { font-size: 1.05rem; margin-bottom: 8px; }
+  .item { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-top: 1px solid #f1f1f1; cursor: pointer; font-size: 0.95rem; }
+  .item:first-of-type { border-top: none; }
+  .item input { width: 20px; height: 20px; margin-top: 1px; flex-shrink: 0; accent-color: #2f7d4f; }
+  .item.is-checked span { text-decoration: line-through; color: #888; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    nav, .controls, footer, .sub { display: none !important; }
+    .group { box-shadow: none; padding: 8px 0; margin-bottom: 0; }
+  }
+
+  .nav { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 700; margin: 6px 0 16px; }
+  .nav a { color: #2f7d4f; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .sitefoot { text-align: center; color: #999; font-size: 0.8rem; margin: 24px 0 12px; }
+  .sitefoot a { color: #2f7d4f; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav"><a href="index.html">Home</a><a href="recipes/index.html">Recipes</a><a href="plan/index.html">Meal Plan</a><a href="articles/index.html">Articles</a><a href="index.html#about">About</a></nav>
+  <h1>🧊 Weekend Meal Prep Sheet — Week of Oct 17</h1>
+  <p class="sub">Optional prep session — the same prep from the podcast. Check off each task as you finish it. Prep is never required; it just makes the week easier.</p>
+  <div class="controls">
+    <button id="check-all">Check all</button>
+    <button id="clear-all" class="secondary">Clear all</button>
+    <button id="print-sheet" class="secondary">🖨️ Print prep sheet</button>
+  </div>
+  <div id="list">
+  <section class="group" data-group="Cook ahead on Saturday/Sunday (about 1–1.5 hours)"><h2>Cook ahead on Saturday/Sunday (about 1–1.5 hours)</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Cook a big batch of rice and quinoa; portion into containers for the tofu bowls, pesto chicken, and breakfast fried rice.</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>Assemble the baked ziti fully and refrigerate unbaked — it goes straight into the oven on Tuesday.</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>Prep the shepherd’s pie filling and cauliflower mash separately; assemble and bake Thursday.</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>Hard-boil a few extra eggs for snacks and to speed up the cottage cheese toast.</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>Wash and chop all peppers, onions, zucchini, and cabbage; store in sealed containers.</span></label></section>
+<section class="group" data-group="Storage"><h2>Storage</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Cooked grains, ziti, shepherd’s pie, and pesto chicken keep 3–4 days refrigerated in airtight containers.</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>Keep slaw, crema, and avocado separate until taco night so nothing goes soggy.</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>Shakshuka sauce (without eggs) freezes well for up to a month.</span></label></section>
+<section class="group" data-group="Reheating"><h2>Reheating</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Reheat grains and casseroles with a splash of water, covered, so they stay moist.</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>French toast and quesadillas re-crisp best in a dry pan or air fryer, not the microwave.</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>Fish tacos and the stuffed chicken are best eaten fresh — cook those the day of.</span></label></section>
+  </div>
+  <footer class="sitefoot">Easy Dad Recipes · <a href="https://easydadrecipes.substack.com/">Newsletter</a> · <a href="https://www.instagram.com/easydadrecipes">Instagram</a> · <a href="https://www.youtube.com/@easydadrecipes">YouTube</a></footer>
+</div>
+<script>(function(){
+  var key = "mealprep:" + "meal-prep-2026-10-17.html";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll(".item input"));
+  function save() {
+    var checked = boxes.filter(function(b) { return b.checked; }).map(function(b) {
+      return b.closest(".group").getAttribute("data-group") + "|" + b.getAttribute("data-i");
+    });
+    try { localStorage.setItem(key, JSON.stringify(checked)); } catch (e) {}
+  }
+  function applyState() {
+    boxes.forEach(function(b) {
+      b.closest(".item").classList.toggle("is-checked", b.checked);
+    });
+  }
+  try {
+    var saved = JSON.parse(localStorage.getItem(key) || "[]");
+    boxes.forEach(function(b) {
+      var id = b.closest(".group").getAttribute("data-group") + "|" + b.getAttribute("data-i");
+      if (saved.indexOf(id) !== -1) b.checked = true;
+    });
+  } catch (e) {}
+  applyState();
+  boxes.forEach(function(b) {
+    b.addEventListener("change", function() { applyState(); save(); });
+  });
+  document.getElementById("check-all").onclick = function() {
+    boxes.forEach(function(b) { b.checked = true; }); applyState(); save();
+  };
+  document.getElementById("clear-all").onclick = function() {
+    boxes.forEach(function(b) { b.checked = false; }); applyState(); save();
+  };
+  document.getElementById("print-sheet").onclick = function() { window.print(); };
+})();</script>
+</body>
+</html>
