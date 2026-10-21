@@ -35,6 +35,35 @@
   .sitefoot .domain { color: #E8710A; font-weight: 800; font-size: 1.1rem; }
   .sitefoot a { color: #ffffff; text-decoration: none; font-weight: 600; }
   .sitefoot a:hover { color: #E8710A; }
+  .carousel { position: relative; margin: 22px 0 6px; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.14); background: #22252A; outline: none; }
+  .carousel:focus-visible { box-shadow: 0 0 0 3px #E8710A, 0 6px 24px rgba(0,0,0,0.14); }
+  .car-viewport { position: relative; aspect-ratio: 16 / 10; }
+  .car-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.7s ease; pointer-events: none; }
+  .car-slide.active { opacity: 1; pointer-events: auto; }
+  .car-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .car-panel { position: absolute; left: 16px; bottom: 16px; max-width: 76%; background: rgba(255,255,255,0.96); border-radius: 14px; padding: 14px 18px 16px; text-align: left; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+  .car-panel h3 { font-family: "Great Vibes", cursive; font-weight: 400; font-size: 2rem; line-height: 1.1; color: #22252A; margin-bottom: 2px; }
+  .car-panel p { font-size: 0.92rem; color: #444; margin-bottom: 10px; line-height: 1.4; }
+  .car-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .car-pill { background: #E8710A; color: #fff; font-weight: 800; font-size: 0.85rem; border-radius: 999px; padding: 7px 14px; white-space: nowrap; }
+  .car-btn { display: inline-block; background: #22252A; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.9rem; border-radius: 999px; padding: 8px 18px; }
+  .car-btn:hover { background: #E8710A; }
+  .car-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; border: none; background: rgba(255,255,255,0.92); color: #E8710A; font-size: 1.6rem; font-weight: 800; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.25); z-index: 3; display: flex; align-items: center; justify-content: center; padding: 0 0 3px; }
+  .car-arrow:hover { background: #E8710A; color: #fff; }
+  .car-arrow.prev { left: 12px; }
+  .car-arrow.next { right: 12px; }
+  .car-dots { position: absolute; right: 16px; bottom: 18px; display: flex; gap: 7px; z-index: 3; background: rgba(34,37,42,0.35); padding: 6px 9px; border-radius: 999px; }
+  .car-dot { width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.65); cursor: pointer; padding: 0; }
+  .car-dot.active { background: #E8710A; transform: scale(1.25); }
+  .car-label { position: absolute; top: 14px; left: 16px; z-index: 3; background: rgba(34,37,42,0.55); color: #fff; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; }
+  @media (max-width: 560px) {
+    .car-panel { left: 10px; right: 10px; bottom: 10px; max-width: none; padding: 10px 14px 12px; }
+    .car-panel h3 { font-size: 1.55rem; }
+    .car-panel p { font-size: 0.85rem; margin-bottom: 8px; }
+    .car-dots { display: none; }
+    .car-arrow { width: 36px; height: 36px; font-size: 1.3rem; }
+    .car-label { top: 10px; left: 10px; }
+  }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTV659CLS0"></script>
@@ -52,6 +81,54 @@ gtag('config', 'G-LTV659CLS0');
     <h1>👨‍🍳 Easy Dad Recipes</h1>
     <p class="tagline">Real food for real life.</p>
     <p><a class="btn" href="recipes/">Browse all recipes →</a> <a class="btn secondary" href="https://easydadrecipes.substack.com/">Get the newsletter →</a></p>
+    <div class="carousel" id="heroCarousel" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Popular dishes">
+      <span class="car-label">Popular right now</span>
+      <div class="car-viewport">
+        <figure class="car-slide active">
+          <img src="images/carousel/peppers.jpg" alt="Jack-O'-Lantern Stuffed Peppers — a carved orange pepper stuffed with beef, rice, beans and corn" fetchpriority="high">
+          <figcaption class="car-panel">
+            <h3>Jack-O'-Lantern Stuffed Peppers</h3>
+            <p>Smoky chili-cumin beef, rice, beans &amp; corn — carved for Halloween.</p>
+            <div class="car-row"><span class="car-pill">~30g Protein</span><a class="car-btn" href="https://easydadrecipes.com/recipes/jack-o-lantern-stuffed-peppers.html">Get the recipe</a></div>
+          </figcaption>
+        </figure>
+        <figure class="car-slide">
+          <img src="images/carousel/tacos.jpg" alt="Crispy Beef Tacos with Avocado Crema and a cheese pull" loading="lazy" decoding="async">
+          <figcaption class="car-panel">
+            <h3>Crispy Beef Tacos</h3>
+            <p>Seasoned beef folded &amp; pan-fried crisp, with cool avocado-lime crema.</p>
+            <div class="car-row"><span class="car-pill">~32g Protein</span><a class="car-btn" href="https://easydadrecipes.com/recipes/crispy-beef-tacos-with-avocado-crema.html">Get the recipe</a></div>
+          </figcaption>
+        </figure>
+        <figure class="car-slide">
+          <img src="images/carousel/tikka.jpg" alt="Light Chicken Tikka Masala served over rice" loading="lazy" decoding="async">
+          <figcaption class="car-panel">
+            <h3>Light Chicken Tikka Masala</h3>
+            <p>Takeout taste, lightened up — Greek yogurt &amp; light coconut milk.</p>
+            <div class="car-row"><span class="car-pill">~42g Protein</span><a class="car-btn" href="https://easydadrecipes.com/recipes/light-chicken-tikka-masala.html">Get the recipe</a></div>
+          </figcaption>
+        </figure>
+        <figure class="car-slide">
+          <img src="images/carousel/salmon.jpg" alt="Bang Bang Salmon with avocado cucumber salsa" loading="lazy" decoding="async">
+          <figcaption class="car-panel">
+            <h3>Bang Bang Salmon</h3>
+            <p>Crispy salmon in sweet-heat sauce — on the table in 20 minutes.</p>
+            <div class="car-row"><span class="car-pill">~35g Protein</span><a class="car-btn" href="https://easydadrecipes.com/recipes/bang-bang-salmon-with-avocado-cucumber-salsa.html">Get the recipe</a></div>
+          </figcaption>
+        </figure>
+        <figure class="car-slide">
+          <img src="images/carousel/bean-soup.jpg" alt="15 Bean Soup with collard greens and smoked turkey" loading="lazy" decoding="async">
+          <figcaption class="car-panel">
+            <h3>15 Bean Soup</h3>
+            <p>Slow-cooker comfort with collard greens &amp; smoked turkey.</p>
+            <div class="car-row"><span class="car-pill">~22g Protein</span><a class="car-btn" href="https://easydadrecipes.com/recipes/15-bean-soup-with-collard-greens-smoked-turkey.html">Get the recipe</a></div>
+          </figcaption>
+        </figure>
+      </div>
+      <button class="car-arrow prev" type="button" aria-label="Previous dish">‹</button>
+      <button class="car-arrow next" type="button" aria-label="Next dish">›</button>
+      <div class="car-dots" role="tablist" aria-label="Choose a dish"></div>
+    </div>
   </header>
   <section class="about" id="about">
     <h2>About Me</h2>
@@ -82,5 +159,55 @@ gtag('config', 'G-LTV659CLS0');
   </section>
   <footer class="sitefoot">Get the full recipe card at<br><span class="domain">easydadrecipes.com</span><br>Easy Dad Recipes · <a href="https://easydadrecipes.substack.com/">Newsletter</a> · <a href="https://www.instagram.com/easydadrecipes">Instagram</a> · <a href="https://www.youtube.com/@easydadrecipes">YouTube</a></footer>
 </div>
+<script>
+(function () {
+  var root = document.getElementById('heroCarousel');
+  if (!root) return;
+  var slides = Array.prototype.slice.call(root.querySelectorAll('.car-slide'));
+  var dotsWrap = root.querySelector('.car-dots');
+  var idx = 0, timer = null;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dots = slides.map(function (_, i) {
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'car-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Show dish ' + (i + 1) + ' of ' + slides.length);
+    d.addEventListener('click', function () { go(i); restart(); });
+    dotsWrap.appendChild(d);
+    return d;
+  });
+  function go(i) {
+    slides[idx].classList.remove('active');
+    dots[idx].classList.remove('active');
+    idx = (i + slides.length) % slides.length;
+    slides[idx].classList.add('active');
+    dots[idx].classList.add('active');
+  }
+  function next() { go(idx + 1); }
+  function start() { if (!reduceMotion && !timer) timer = setInterval(next, 5000); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function restart() { stop(); start(); }
+  root.querySelector('.car-arrow.next').addEventListener('click', function () { next(); restart(); });
+  root.querySelector('.car-arrow.prev').addEventListener('click', function () { go(idx - 1); restart(); });
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+  root.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { next(); restart(); e.preventDefault(); }
+    if (e.key === 'ArrowLeft') { go(idx - 1); restart(); e.preventDefault(); }
+  });
+  var tx = null;
+  root.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; stop(); }, { passive: true });
+  root.addEventListener('touchend', function (e) {
+    if (tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 40) { if (dx < 0) next(); else go(idx - 1); }
+    tx = null; start();
+  }, { passive: true });
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  start();
+})();
+</script>
 </body>
 </html>
