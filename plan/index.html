@@ -4,34 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meal Plan — Easy Dad Recipes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f6f4ef; color: #2b2b2b; padding: 16px; line-height: 1.5; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #ffffff; color: #22252A; padding: 16px; line-height: 1.5; }
   .wrap { max-width: 720px; margin: 0 auto; }
-  h1 { font-size: 1.6rem; margin: 8px 0 4px; }
+  h1 { font-family: "Great Vibes", cursive; font-weight: 400; font-size: 2.6rem; line-height: 1.15; margin: 8px 0 4px; }
   .sub { color: #6b6b6b; font-size: 0.95rem; margin-bottom: 18px; }
-  .planner { background: #fff; border-radius: 14px; padding: 16px; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-  .planner h3 { font-size: 1rem; margin-bottom: 10px; }
-  .plan-day { display: flex; gap: 10px; padding: 8px 0; border-top: 1px solid #f1f1f1; font-size: 0.9rem; }
+  .planner { background: #fff; border: 1px solid #F3E9DF; border-radius: 16px; padding: 16px; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .planner h3 { font-size: 1rem; margin-bottom: 10px; color: #E8710A; text-transform: uppercase; letter-spacing: 0.04em; }
+  .plan-day { display: flex; gap: 10px; padding: 8px 0; border-top: 1px solid #F3EDE6; font-size: 0.9rem; }
   .plan-day:first-of-type { border-top: none; }
   .plan-day b { min-width: 78px; }
   .plan-day .meals { flex: 1; }
-  .plan-day a { color: #2f7d4f; font-weight: 600; text-decoration: none; }
+  .plan-day a { color: #E8710A; font-weight: 600; text-decoration: none; }
   .plan-day .lbl { color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .plan-links { margin-top: 10px; }
-  .plan-links a { color: #2f7d4f; font-weight: 700; text-decoration: none; }
+  .plan-links a { color: #E8710A; font-weight: 700; text-decoration: none; }
   .plan-nav { display: flex; gap: 10px; justify-content: space-between; margin-bottom: 12px; }
-  .plan-nav button { background: #2f7d4f; color: #fff; border: none; border-radius: 999px; padding: 8px 14px; font: inherit; font-weight: 600; cursor: pointer; }
-  .plan-nav button:disabled { background: #cfd8d2; cursor: default; }
-  .lists { background: #fff; border-radius: 14px; padding: 16px; margin-top: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-  .lists h3 { font-size: 1rem; margin-bottom: 8px; }
-  .lists a { display: block; color: #2f7d4f; font-weight: 600; margin-bottom: 4px; }
+  .plan-nav button { background: #E8710A; color: #fff; border: none; border-radius: 999px; padding: 8px 14px; font: inherit; font-weight: 600; cursor: pointer; }
+  .plan-nav button:disabled { background: #E3DDD6; cursor: default; }
+  .lists { background: #fff; border: 1px solid #F3E9DF; border-radius: 16px; padding: 16px; margin-top: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .lists h3 { font-size: 1rem; margin-bottom: 8px; color: #E8710A; text-transform: uppercase; letter-spacing: 0.04em; }
+  .lists a { display: block; color: #E8710A; font-weight: 600; margin-bottom: 4px; }
 
   .nav { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 700; margin: 6px 0 16px; }
-  .nav a { color: #2f7d4f; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .sitefoot { text-align: center; color: #999; font-size: 0.8rem; margin: 24px 0 12px; }
-  .sitefoot a { color: #2f7d4f; text-decoration: none; }
+  .nav a { color: #22252A; text-decoration: none; }
+  .nav a:hover { color: #E8710A; text-decoration: underline; }
+  .sitefoot { background: #222222; color: #ffffff; text-align: center; font-size: 0.85rem; line-height: 1.6; margin: 28px 0 12px; padding: 20px 16px 22px; border-radius: 16px; }
+  .sitefoot .domain { color: #E8710A; font-weight: 800; font-size: 1.1rem; }
+  .sitefoot a { color: #ffffff; text-decoration: none; font-weight: 600; }
+  .sitefoot a:hover { color: #E8710A; }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTV659CLS0"></script>
@@ -117,7 +121,7 @@ gtag('config', 'G-LTV659CLS0');
 <a href="../grocery-list-2026-09-26.html">Week of Sep 26, 2026</a>
 <a href="../grocery-list-2026-09-22.html">Week of Sep 22, 2026</a>
   </div>
-  <footer class="sitefoot">Easy Dad Recipes · <a href="https://easydadrecipes.substack.com/">Newsletter</a> · <a href="https://www.instagram.com/easydadrecipes">Instagram</a> · <a href="https://www.youtube.com/@easydadrecipes">YouTube</a></footer>
+  <footer class="sitefoot">Get the full recipe card at<br><span class="domain">easydadrecipes.com</span><br>Easy Dad Recipes · <a href="https://easydadrecipes.substack.com/">Newsletter</a> · <a href="https://www.instagram.com/easydadrecipes">Instagram</a> · <a href="https://www.youtube.com/@easydadrecipes">YouTube</a></footer>
 </div>
 </body>
 </html>
