@@ -57,11 +57,12 @@
   .car-dot.active { background: #E8710A; transform: scale(1.25); }
   .car-label { position: absolute; top: 14px; left: 16px; z-index: 3; background: rgba(34,37,42,0.55); color: #fff; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; }
   @media (max-width: 560px) {
+    .car-viewport { aspect-ratio: 9 / 10; }
     .car-panel { left: 10px; right: 10px; bottom: 10px; max-width: none; padding: 10px 14px 12px; }
-    .car-panel h3 { font-size: 1.55rem; }
+    .car-panel h3 { font-size: 1.5rem; }
     .car-panel p { font-size: 0.85rem; margin-bottom: 8px; }
     .car-dots { display: none; }
-    .car-arrow { width: 36px; height: 36px; font-size: 1.3rem; }
+    .car-arrow { width: 36px; height: 36px; font-size: 1.3rem; top: 30%; }
     .car-label { top: 10px; left: 10px; }
   }
 </style>
