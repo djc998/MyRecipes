@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Easy Dad Recipes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #ffffff; color: #22252A; padding: 16px; line-height: 1.6; }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  h1 { font-family: "Great Vibes", cursive; font-weight: 400; font-size: 2.6rem; line-height: 1.15; margin: 8px 0 4px; }
+  .sub { color: #6b6b6b; font-size: 0.95rem; margin-bottom: 18px; }
+  .card { background: #fff; border: 1px solid #F3E9DF; border-radius: 16px; padding: 20px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+  .card h2 { font-size: 1.05rem; margin: 18px 0 8px; color: #E8710A; text-transform: uppercase; letter-spacing: 0.04em; }
+  .card h2:first-child { margin-top: 0; }
+  .card p { margin-bottom: 10px; font-size: 0.98rem; }
+  .card p:last-child { margin-bottom: 0; }
+  .card a { color: #E8710A; }
+  .card label { display: block; font-weight: 700; font-size: 0.9rem; margin: 12px 0 4px; }
+  .card input, .card textarea { width: 100%; font: inherit; font-size: 0.98rem; padding: 10px 12px; border: 1px solid #E3D9CE; border-radius: 10px; background: #FFFDFB; color: #22252A; }
+  .card textarea { min-height: 130px; resize: vertical; }
+  .card button { margin-top: 14px; background: #E8710A; color: #fff; border: 0; font: inherit; font-weight: 700; border-radius: 999px; padding: 10px 24px; cursor: pointer; }
+  .card button:hover { background: #C85F06; }
+  .nav { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 700; margin: 6px 0 16px; }
+  .nav a { color: #22252A; text-decoration: none; }
+  .nav a:hover { color: #E8710A; text-decoration: underline; }
+  .sitefoot { background: #222222; color: #ffffff; text-align: center; font-size: 0.85rem; line-height: 1.6; margin: 28px 0 12px; padding: 20px 16px 22px; border-radius: 16px; }
+  .sitefoot .domain { color: #E8710A; font-weight: 800; font-size: 1.1rem; }
+  .sitefoot a { color: #ffffff; text-decoration: none; font-weight: 600; }
+  .sitefoot a:hover { color: #E8710A; }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTV659CLS0"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LTV659CLS0');
+</script>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav"><a href="index.html">Home</a><a href="recipes/index.html">Recipes</a><a href="plan/index.html">Meal Plan</a><a href="articles/index.html">Articles</a><a href="index.html#about">About</a></nav>
+  <h1>Contact Easy Dad Recipes</h1>
+  <p class="sub">Questions, requests, or a dinner idea? Get in touch.</p>
+  <div class="card">
+    <h2>Email</h2>
+    <p>The best way to reach us is email: <a href="mailto:hello@easydadrecipes.com">hello@easydadrecipes.com</a>. Or use the form below — it opens your own email app with the message addressed and ready to send.</p>
+    <form id="contact-form">
+      <label for="cf-name">Your name</label>
+      <input id="cf-name" name="name" type="text" autocomplete="name" required>
+      <label for="cf-email">Your email</label>
+      <input id="cf-email" name="email" type="email" autocomplete="email" required>
+      <label for="cf-message">Message</label>
+      <textarea id="cf-message" name="message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p>If the form doesn't open your mail app, just email <a href="mailto:hello@easydadrecipes.com">hello@easydadrecipes.com</a> directly — that works too.</p>
+    <h2>Follow along</h2>
+    <p>New recipes show up first on the <a href="https://www.youtube.com/@easydadrecipes">Easy Dad Recipes YouTube channel</a> and on <a href="https://www.instagram.com/easydadrecipes">Instagram (@easydadrecipes)</a>.</p>
+  </div>
+  <footer class="sitefoot">Get the full recipe card at<br><span class="domain">easydadrecipes.com</span><br>Easy Dad Recipes · <a href="https://easydadrecipes.substack.com/">Newsletter</a> · <a href="https://www.instagram.com/easydadrecipes">Instagram</a> · <a href="https://www.youtube.com/@easydadrecipes">YouTube</a><br><a href="privacy.html">Privacy Policy</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="terms.html">Terms</a></footer>
+</div>
+<script>
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var name = document.getElementById("cf-name").value;
+  var email = document.getElementById("cf-email").value;
+  var message = document.getElementById("cf-message").value;
+  var body = "Name: " + name + "\nEmail: " + email + "\n\n" + message;
+  window.location.href = "mailto:hello@easydadrecipes.com"
+    + "?subject=" + encodeURIComponent("Easy Dad Recipes contact")
+    + "&body=" + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
