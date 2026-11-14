@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grocery list — Week of Nov 14, 2026 — Easy Dad Recipes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #ffffff; color: #22252A; padding: 16px; line-height: 1.5; }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-family: "Great Vibes", cursive; font-weight: 400; font-size: 2.6rem; line-height: 1.15; margin: 8px 0 4px; }
+  .sub { color: #6b6b6b; font-size: 0.95rem; margin-bottom: 18px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .controls button { background: #E8710A; color: #fff; border: none; border-radius: 999px; padding: 9px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+  .controls button.secondary { background: #fff; color: #E8710A; border: 1px solid #E8710A; }
+  .group { background: #fff; border: 1px solid #F3E9DF; border-radius: 16px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .group h2 { font-size: 1.05rem; margin-bottom: 8px; color: #E8710A; text-transform: uppercase; letter-spacing: 0.04em; }
+  .item { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-top: 1px solid #F3EDE6; cursor: pointer; font-size: 0.95rem; }
+  .item:first-of-type { border-top: none; }
+  .item input { width: 20px; height: 20px; margin-top: 1px; flex-shrink: 0; accent-color: #E8710A; }
+  .item.is-checked span { font-weight: 600; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    nav, .controls, footer, .sub { display: none !important; }
+    .group { box-shadow: none; padding: 8px 0; margin-bottom: 0; }
+    body.checked-only .item:not(.is-checked) { display: none !important; }
+    body.checked-only .group:has(.item.is-checked) { display: block; }
+    body.checked-only .group:not(:has(.item.is-checked)) { display: none !important; }
+  }
+
+  .nav { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 700; margin: 6px 0 16px; }
+  .nav a { color: #22252A; text-decoration: none; }
+  .nav a:hover { color: #E8710A; text-decoration: underline; }
+  .sitefoot { background: #222222; color: #ffffff; text-align: center; font-size: 0.85rem; line-height: 1.6; margin: 28px 0 12px; padding: 20px 16px 22px; border-radius: 16px; }
+  .sitefoot .domain { color: #E8710A; font-weight: 800; font-size: 1.1rem; }
+  .sitefoot a { color: #ffffff; text-decoration: none; font-weight: 600; }
+  .sitefoot a:hover { color: #E8710A; }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTV659CLS0"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LTV659CLS0');
+</script>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav"><a href="index.html">Home</a><a href="recipes/index.html">Recipes</a><a href="plan/index.html">Meal Plan</a><a href="articles/index.html">Articles</a><a href="index.html#about">About</a></nav>
+  <h1>🛒 Grocery list — Week of Nov 14, 2026</h1>
+  <p class="sub">Consolidated list for all 14 recipes (7 breakfasts + 7 dinners). Serves 4 per dinner unless noted. Check what you need, then print the list to bring to the store.</p>
+  <div class="controls">
+    <button id="check-all">Check all</button>
+    <button id="clear-all" class="secondary">Clear all</button>
+    <button id="print-all" class="secondary">🖨️ Print list</button>
+    <button id="print-checked" class="secondary">🖨️ Print checked only</button>
+  </div>
+  <div id="list">
+  <section class="group" data-group="Produce"><h2>Produce</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Blueberries — ½ cup (overnight oats)</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>Mixed berries — 1 cup (French toast sticks)</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>Banana — 1 (smoothie)</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>Lemons — 3 (overnight oats, honey mustard chicken, shrimp pasta, salmon wedges)</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>Limes — 2 (tortilla soup, teriyaki bowls)</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>Broccoli florets — 3 cups total (breakfast skillet 1 cup + honey mustard chicken 2 cups)</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>Mushrooms, sliced — 2 cups (steak &amp; mushroom skillet)</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>Green beans — 2 cups (pesto salmon)</span></label>
+<label class="item"><input type="checkbox" data-i="8"><span>Cherry tomatoes — 1 cup (pesto salmon)</span></label>
+<label class="item"><input type="checkbox" data-i="9"><span>Bell peppers — 2 green + 1 small (tortilla soup, chili, quesadilla/skillet)</span></label>
+<label class="item"><input type="checkbox" data-i="10"><span>Onions — 2 (tortilla soup + chili)</span></label>
+<label class="item"><input type="checkbox" data-i="11"><span>Shallot — 1 (breakfast skillet)</span></label>
+<label class="item"><input type="checkbox" data-i="12"><span>Garlic — 2 heads</span></label>
+<label class="item"><input type="checkbox" data-i="13"><span>Ginger, fresh — 1 small piece (teriyaki bowls)</span></label>
+<label class="item"><input type="checkbox" data-i="14"><span>Potatoes — 4½ lb total (2 cups red potatoes for the skillet, 1½ lb yellow for honey mustard chicken, 2 lb for mashing)</span></label>
+<label class="item"><input type="checkbox" data-i="15"><span>Carrots, shredded — 1 cup (teriyaki bowls)</span></label>
+<label class="item"><input type="checkbox" data-i="16"><span>Red cabbage, shredded — 1 cup (teriyaki bowls)</span></label>
+<label class="item"><input type="checkbox" data-i="17"><span>Green onions — 2 (teriyaki bowls)</span></label>
+<label class="item"><input type="checkbox" data-i="18"><span>Chives — 1 small bunch (breakfast cups)</span></label>
+<label class="item"><input type="checkbox" data-i="19"><span>Fresh parsley — 1 bunch (steak skillet + shrimp pasta)</span></label>
+<label class="item"><input type="checkbox" data-i="20"><span>Corn, canned or frozen — 1 cup (tortilla soup)</span></label>
+<label class="item"><input type="checkbox" data-i="21"><span>Salsa — 1 jar (quesadilla)</span></label></section>
+<section class="group" data-group="Meat &amp; Seafood"><h2>Meat &amp; Seafood</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Chicken thighs — 3 lb total (1½ lb honey mustard chicken + 1½ lb teriyaki bowls)</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>Chicken breasts — 1½ lb (tortilla soup)</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>Ground turkey — 1 lb (chili)</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>Sirloin or ribeye — 1½ lb (steak &amp; mushroom skillet)</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>Salmon fillets — 4 (pesto salmon)</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>Shrimp, peeled &amp; deveined — 1 lb</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>Turkey bacon — 12 slices (quesadilla + breakfast cups)</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>Chicken sausage links — 2 (breakfast skillet)</span></label>
+<label class="item"><input type="checkbox" data-i="8"><span>Sausage patties, small — 8 (breakfast sliders)</span></label></section>
+<section class="group" data-group="Dairy &amp; Eggs"><h2>Dairy &amp; Eggs</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Eggs — 2½ dozen</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>Milk — 1 quart (overnight oats, French toast sticks, chili, mashing)</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>Almond milk — 1 carton (smoothie)</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>Nonfat Greek yogurt — 1 small tub (overnight oats)</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>Butter — 2 sticks</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>Heavy cream — ½ cup (steak skillet)</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>Shredded cheddar — 1½ cups total (quesadilla ½ cup + skillet ½ cup + breakfast cups ½ cup)</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>Sliced cheddar — 8 slices (breakfast sliders)</span></label>
+<label class="item"><input type="checkbox" data-i="8"><span>Grated Parmesan — ¾ cup total (steak skillet ¼ cup + shrimp pasta ½ cup)</span></label>
+<label class="item"><input type="checkbox" data-i="9"><span>Pesto — 1 jar (⅓ cup)</span></label>
+<label class="item"><input type="checkbox" data-i="10"><span>Sour cream — 1 small tub (tortilla soup topping)</span></label></section>
+<section class="group" data-group="Frozen"><h2>Frozen</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>None this week — everything fresh.</span></label></section>
+<section class="group" data-group="Pantry (buy if you don&#x27;t have it)"><h2>Pantry (buy if you don&#x27;t have it)</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Rolled oats — ½ cup (overnight oats; use pantry oats)</span></label>
+<label class="item"><input type="checkbox" data-i="1"><span>Vanilla protein powder — 1 container (overnight oats + French toast sticks)</span></label>
+<label class="item"><input type="checkbox" data-i="2"><span>Chocolate protein powder — 1 container (smoothie)</span></label>
+<label class="item"><input type="checkbox" data-i="3"><span>Chia seeds — 1 bag</span></label>
+<label class="item"><input type="checkbox" data-i="4"><span>Maple syrup — 1 bottle</span></label>
+<label class="item"><input type="checkbox" data-i="5"><span>Vanilla extract — 1 bottle</span></label>
+<label class="item"><input type="checkbox" data-i="6"><span>Peanut butter — 1 jar</span></label>
+<label class="item"><input type="checkbox" data-i="7"><span>Medjool dates — 1 small pack (2 needed)</span></label>
+<label class="item"><input type="checkbox" data-i="8"><span>Graham crackers — 1 box (overnight oats topping)</span></label>
+<label class="item"><input type="checkbox" data-i="9"><span>Honey — 1 bottle</span></label>
+<label class="item"><input type="checkbox" data-i="10"><span>Dijon mustard — 1 bottle</span></label>
+<label class="item"><input type="checkbox" data-i="11"><span>Teriyaki sauce — 1 bottle</span></label>
+<label class="item"><input type="checkbox" data-i="12"><span>Sriracha — 1 bottle</span></label>
+<label class="item"><input type="checkbox" data-i="13"><span>Large flour tortillas — 1 pack (2 needed)</span></label>
+<label class="item"><input type="checkbox" data-i="14"><span>Slider buns — 1 pack (8)</span></label>
+<label class="item"><input type="checkbox" data-i="15"><span>Thick-sliced bread — 1 loaf (French toast sticks)</span></label>
+<label class="item"><input type="checkbox" data-i="16"><span>Tortilla strips — 1 bag (tortilla soup topping)</span></label>
+<label class="item"><input type="checkbox" data-i="17"><span>Cooking spray — 1 can</span></label>
+<label class="item"><input type="checkbox" data-i="18"><span>Linguine — 1 box (12 oz)</span></label>
+<label class="item"><input type="checkbox" data-i="19"><span>Rice — 1 bag (2 cups, teriyaki bowls)</span></label>
+<label class="item"><input type="checkbox" data-i="20"><span>Cornmeal — 1 bag (1 cup, chili topping)</span></label>
+<label class="item"><input type="checkbox" data-i="21"><span>Diced tomatoes, canned — 2 cans (tortilla soup + chili)</span></label>
+<label class="item"><input type="checkbox" data-i="22"><span>Black beans, canned — 1 can (tortilla soup)</span></label>
+<label class="item"><input type="checkbox" data-i="23"><span>Kidney beans, canned — 1 can (chili)</span></label>
+<label class="item"><input type="checkbox" data-i="24"><span>Chicken broth — 1 carton (4 cups, tortilla soup)</span></label>
+<label class="item"><input type="checkbox" data-i="25"><span>Chili powder — 1 bottle</span></label>
+<label class="item"><input type="checkbox" data-i="26"><span>Cumin — 1 bottle</span></label>
+<label class="item"><input type="checkbox" data-i="27"><span>Cinnamon — 1 bottle</span></label>
+<label class="item"><input type="checkbox" data-i="28"><span>Red pepper flakes — 1 bottle</span></label>
+<label class="item"><input type="checkbox" data-i="29"><span>Sesame seeds — 1 bag</span></label></section>
+<section class="group" data-group="Check your pantry (assumed on hand)"><h2>Check your pantry (assumed on hand)</h2>
+<label class="item"><input type="checkbox" data-i="0"><span>Olive oil, salt, pepper, cooking oil/butter for the pan</span></label></section>
+  </div>
+  <footer class="sitefoot">Get the full recipe card at<br><span class="domain">easydadrecipes.com</span><br>Easy Dad Recipes · <a href="https://easydadrecipes.substack.com/">Newsletter</a> · <a href="https://www.instagram.com/easydadrecipes">Instagram</a> · <a href="https://www.youtube.com/@easydadrecipes">YouTube</a><br><a href="privacy.html">Privacy Policy</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="terms.html">Terms</a></footer>
+</div>
+<script>(function(){
+  var key = "grocery:" + "grocery-list-2026-11-14.md";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll(".item input"));
+  function save() {
+    var checked = boxes.filter(function(b) { return b.checked; }).map(function(b) {
+      return b.closest(".group").getAttribute("data-group") + "|" + b.getAttribute("data-i");
+    });
+    try { localStorage.setItem(key, JSON.stringify(checked)); } catch (e) {}
+  }
+  function applyState() {
+    boxes.forEach(function(b) {
+      b.closest(".item").classList.toggle("is-checked", b.checked);
+    });
+  }
+  try {
+    var saved = JSON.parse(localStorage.getItem(key) || "[]");
+    boxes.forEach(function(b) {
+      var id = b.closest(".group").getAttribute("data-group") + "|" + b.getAttribute("data-i");
+      if (saved.indexOf(id) !== -1) b.checked = true;
+    });
+  } catch (e) {}
+  applyState();
+  boxes.forEach(function(b) {
+    b.addEventListener("change", function() { applyState(); save(); });
+  });
+  document.getElementById("check-all").onclick = function() {
+    boxes.forEach(function(b) { b.checked = true; }); applyState(); save();
+  };
+  document.getElementById("clear-all").onclick = function() {
+    boxes.forEach(function(b) { b.checked = false; }); applyState(); save();
+  };
+  document.getElementById("print-all").onclick = function() {
+    document.body.classList.remove("checked-only"); window.print();
+  };
+  document.getElementById("print-checked").onclick = function() {
+    document.body.classList.add("checked-only"); window.print();
+  };
+  window.addEventListener("afterprint", function() {
+    document.body.classList.remove("checked-only");
+  });
+})();</script>
+</body>
+</html>
